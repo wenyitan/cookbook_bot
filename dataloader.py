@@ -1,5 +1,7 @@
 import mysql.connector
 import configparser
+import pandas as pd
+import json
 
 config = configparser.ConfigParser()
 config.read("configs.ini")
@@ -32,3 +34,10 @@ mycursor = mydb.cursor()
 ## Dish table
 # mycursor.execute("CREATE TABLE dish (dishId INT AUTO_INCREMENT PRIMARY KEY, dish VARCHAR(255), ingrendients LONGTEXT, instructions LONGTEXT, cuisine INT)")
 
+# df = pd.read_csv('Cookbook.csv')
+# df = list(map(lambda x: tuple(x), df.values))
+
+# query = "INSERT INTO `tianCookbookDatabase`.`dish` (`dish`, `ingredients`, `instructions`, `cuisine`) VALUES (%s, %s, %s, %s);"
+# mycursor.executemany(query, df)
+
+# mydb.commit()
